@@ -1,0 +1,161 @@
+package com.nompor.gtk.fx.input;
+
+import static com.nompor.gtk.input.GTKKeyCode.*;
+
+import java.util.EnumMap;
+
+import com.nompor.gtk.input.GTKKeyCode;
+
+import javafx.scene.input.KeyCode;
+
+public class KeyCodeConverterFX {
+
+	private static final EnumMap<KeyCode,GTKKeyCode> map = new EnumMap<>(KeyCode.class);
+	private static final EnumMap<GTKKeyCode,KeyCode> map2 = new EnumMap<>(GTKKeyCode.class);
+	static {
+		map.put(KeyCode.ENTER,			ENTER);
+		map.put(KeyCode.BACK_SPACE,		BACKSPACE);
+		map.put(KeyCode.TAB,			TAB);
+		map.put(KeyCode.CANCEL,			CANCEL);
+		map.put(KeyCode.CLEAR,			CLEAR);
+		map.put(KeyCode.PAUSE,			PAUSE);
+		map.put(KeyCode.ESCAPE,			ESCAPE);
+		map.put(KeyCode.SPACE,			SPACE);
+		map.put(KeyCode.DELETE,			DELETE);
+		map.put(KeyCode.PRINTSCREEN,	PRINTSCREEN);
+		map.put(KeyCode.INSERT,			INSERT);
+		map.put(KeyCode.HELP,			HELP);
+		map.put(KeyCode.SHIFT,			SHIFT);
+		map.put(KeyCode.CONTROL,		CONTROL);
+		map.put(KeyCode.ALT,			ALT);
+		map.put(KeyCode.ALT_GRAPH,		ALT_GRAPH);
+		map.put(KeyCode.WINDOWS,		WINDOWS);
+		map.put(KeyCode.CONTEXT_MENU,	CONTEXT_MENU);
+		map.put(KeyCode.CAPS,			CAPS_LOCK);
+		map.put(KeyCode.NUM_LOCK,		NUM_LOCK);
+		map.put(KeyCode.SCROLL_LOCK,	SCROLL_LOCK);
+		map.put(KeyCode.COMMAND,		COMMAND);
+		map.put(KeyCode.PAGE_UP,		PAGE_UP);
+		map.put(KeyCode.PAGE_DOWN,		PAGE_DOWN);
+		map.put(KeyCode.END,			END);
+		map.put(KeyCode.HOME,			HOME);
+		map.put(KeyCode.LEFT,			LEFT);
+		map.put(KeyCode.UP,				UP);
+		map.put(KeyCode.RIGHT,			RIGHT);
+		map.put(KeyCode.DOWN,			DOWN);
+		map.put(KeyCode.COMMA,			COMMA);
+		map.put(KeyCode.MINUS,			MINUS);
+		map.put(KeyCode.PERIOD,			PERIOD);
+		map.put(KeyCode.SLASH,			SLASH);
+		map.put(KeyCode.SEMICOLON,		SEMICOLON);
+		map.put(KeyCode.EQUALS,			EQUALS);
+		map.put(KeyCode.OPEN_BRACKET,	OPEN_BRACKET);
+		map.put(KeyCode.BACK_SLASH,		BACK_SLASH);
+		map.put(KeyCode.CLOSE_BRACKET,	CLOSE_BRACKET);
+		map.put(KeyCode.MULTIPLY,		MULTIPLY);
+		map.put(KeyCode.ADD,			ADD);
+		map.put(KeyCode.SEPARATOR,		SEPARATOR);
+		map.put(KeyCode.SUBTRACT,		SUBTRACT);
+		map.put(KeyCode.DECIMAL,		DECIMAL);
+		map.put(KeyCode.DIVIDE,			DIVIDE);
+		map.put(KeyCode.AMPERSAND,		AMPERSAND);
+		map.put(KeyCode.ASTERISK,		ASTERISK);
+		map.put(KeyCode.QUOTEDBL,		DOUBLE_QUOTE);
+		map.put(KeyCode.LESS,			LESS);
+		map.put(KeyCode.GREATER,		GREATER);
+		map.put(KeyCode.BRACELEFT,		BRACELEFT);
+		map.put(KeyCode.BRACERIGHT,		BRACERIGHT);
+		map.put(KeyCode.BACK_QUOTE,		BACK_QUOTE);
+		map.put(KeyCode.QUOTE,			QUOTE);
+		map.put(KeyCode.AT,				AT);
+		map.put(KeyCode.COLON,			COLON);
+		map.put(KeyCode.CIRCUMFLEX,		CIRCUMFLEX);
+		map.put(KeyCode.DOLLAR,			DOLLAR);
+		map.put(KeyCode.EURO_SIGN,					EURO_SIGN);
+		map.put(KeyCode.EXCLAMATION_MARK,			EXCLAMATION);
+		map.put(KeyCode.INVERTED_EXCLAMATION_MARK,	INVERTED_EXCLAMATION);
+		map.put(KeyCode.LEFT_PARENTHESIS,			LEFT_PARENTHESIS);
+		map.put(KeyCode.NUMBER_SIGN,				NUMBER_SIGN);
+		map.put(KeyCode.PLUS,						PLUS);
+		map.put(KeyCode.RIGHT_PARENTHESIS,			RIGHT_PARENTHESIS);
+		map.put(KeyCode.UNDERSCORE,					UNDERSCORE);
+		map.put(KeyCode.DIGIT0,		NUMBER0);
+		map.put(KeyCode.DIGIT1,		NUMBER1);
+		map.put(KeyCode.DIGIT2,		NUMBER2);
+		map.put(KeyCode.DIGIT3,		NUMBER3);
+		map.put(KeyCode.DIGIT4,		NUMBER4);
+		map.put(KeyCode.DIGIT5,		NUMBER5);
+		map.put(KeyCode.DIGIT6,		NUMBER6);
+		map.put(KeyCode.DIGIT7,		NUMBER7);
+		map.put(KeyCode.DIGIT8,		NUMBER8);
+		map.put(KeyCode.DIGIT9,		NUMBER9);
+		map.put(KeyCode.A,			A);
+		map.put(KeyCode.B,			B);
+		map.put(KeyCode.C,			C);
+		map.put(KeyCode.D,			D);
+		map.put(KeyCode.E,			E);
+		map.put(KeyCode.F,			F);
+		map.put(KeyCode.G,			G);
+		map.put(KeyCode.H,			H);
+		map.put(KeyCode.I,			I);
+		map.put(KeyCode.J,			J);
+		map.put(KeyCode.K,			K);
+		map.put(KeyCode.L,			L);
+		map.put(KeyCode.M,			M);
+		map.put(KeyCode.N,			N);
+		map.put(KeyCode.O,			O);
+		map.put(KeyCode.P,			P);
+		map.put(KeyCode.Q,			Q);
+		map.put(KeyCode.R,			R);
+		map.put(KeyCode.S,			S);
+		map.put(KeyCode.T,			T);
+		map.put(KeyCode.U,			U);
+		map.put(KeyCode.V,			V);
+		map.put(KeyCode.W,			W);
+		map.put(KeyCode.X,			X);
+		map.put(KeyCode.Y,			Y);
+		map.put(KeyCode.Z,			Z);
+		map.put(KeyCode.NUMPAD0,		NUMPAD0);
+		map.put(KeyCode.NUMPAD1,		NUMPAD1);
+		map.put(KeyCode.NUMPAD2,		NUMPAD2);
+		map.put(KeyCode.NUMPAD3,		NUMPAD3);
+		map.put(KeyCode.NUMPAD4,		NUMPAD4);
+		map.put(KeyCode.NUMPAD5,		NUMPAD5);
+		map.put(KeyCode.NUMPAD6,		NUMPAD6);
+		map.put(KeyCode.NUMPAD7,		NUMPAD7);
+		map.put(KeyCode.NUMPAD8,		NUMPAD8);
+		map.put(KeyCode.NUMPAD9,		NUMPAD9);
+		map.put(KeyCode.F1,			F1);
+		map.put(KeyCode.F2,			F2);
+		map.put(KeyCode.F3,			F3);
+		map.put(KeyCode.F4,			F4);
+		map.put(KeyCode.F5,			F5);
+		map.put(KeyCode.F6,			F6);
+		map.put(KeyCode.F7,			F7);
+		map.put(KeyCode.F8,			F8);
+		map.put(KeyCode.F9,			F9);
+		map.put(KeyCode.F10,		F10);
+		map.put(KeyCode.F11,		F11);
+		map.put(KeyCode.F12,		F12);
+		map.put(KeyCode.F13,		F13);
+		map.put(KeyCode.F14,		F14);
+		map.put(KeyCode.F15,		F15);
+		map.put(KeyCode.F16,		F16);
+		map.put(KeyCode.F17,		F17);
+		map.put(KeyCode.F18,		F18);
+		map.put(KeyCode.F19,		F19);
+		map.put(KeyCode.F20,		F20);
+		map.put(KeyCode.F21,		F21);
+		map.put(KeyCode.F22,		F22);
+		map.put(KeyCode.F23,		F23);
+		map.put(KeyCode.F24,		F24);
+
+		map.forEach((k,v)->map2.put(v, k));
+	}
+	public static GTKKeyCode toGTKCode(KeyCode key) {
+		return map.get(key);
+	}
+	public static KeyCode toCode(GTKKeyCode key) {
+		return map2.get(key);
+	}
+}
