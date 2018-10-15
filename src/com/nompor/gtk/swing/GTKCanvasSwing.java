@@ -20,8 +20,12 @@ public class GTKCanvasSwing extends GameView implements GTKView, GTKCanvas {
 	private GTKGraphicsAWT gtkg = new GTKGraphicsAWT(getGraphics());
 	private GTKKeyEvent key = new GTKKeyEvent();
 	private GTKMouseEvent mouse = new GTKMouseEvent();
+	private GTKView nextView = null;
 
 	public void changeView(GTKView view) {
+		nextView = view;
+	}
+	private void _changeView(GTKView view) {
 		GTKView oldView = this.view;
 		if ( oldView != null ) oldView.stop();
 		view.ready();
@@ -45,6 +49,10 @@ public class GTKCanvasSwing extends GameView implements GTKView, GTKCanvas {
 
 	@Override
 	public void process() {
+		if ( nextView != null ) {
+			_changeView(nextView);
+			nextView = null;
+		}
 		view.process();
 	}
 
